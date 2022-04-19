@@ -1,3 +1,8 @@
+/**
+ * this is a new class for Vehicle
+ */
+
+
 class Vehicle {
 
     name; //string
@@ -5,39 +10,51 @@ class Vehicle {
     crew; //array
 
 
+    /**
+     * 
+     * @param {String} name 
+     * @param {String} type
+     * @param {Array} crew 
+     */
     constructor(name,type) {
         this.name = name;
         this.type = type;
         this.crew = [];
     }
 
-
-    canGo(Employee) {
+    /**
+     * this method checks if the vehicle is eligible to go or not. The vehicle should be asigned a crew and it should be the right crew based on the vehicle type
+     * @param {Employee} employee 
+     */
+    canGo(employee) {
 
         if (this.crew.length != 0) {
-        if(this.type == "plane" && Employee.title == "pilot") {
+        if(this.type == "plane" && employee.title == "pilot") {
             console.log(`the ${this.type} can go`)
         }
 
-        if(this.type == "bus" && Employee.title == "driver") {
+        if(this.type == "bus" && employee.title == "driver") {
             console.log(`the ${this.type} can go`)
         }
 
-        if(this.type == "train" && Employee.title == "engineer") {
+        if(this.type == "train" && employee.title == "engineer") {
             console.log(`the ${this.type} can go`)
         }
 
-        if(this.type == "boat" && Employee.title == "captain") {
+        if(this.type == "boat" && employee.title == "captain") {
             console.log(`the ${this.type} can go`)
         }
 
         } else {
-            console.log(`${this.type} cant go`)
+            console.log(`${this.type} cannot go because it does not have a crew or the right crew assigned`)
         } 
 }
 
 }
 
+/**
+ * this is a new class for Employee
+ */
 
 class Employee {
 
@@ -49,25 +66,29 @@ class Employee {
         this.title = title; 
     }
 
-    assign(Vehicle) {
-        if(Vehicle.crew.length == 0) {
-            if (Vehicle.type == "plane" && this.title == "pilot")
-            Vehicle.crew.push(this.name)
+    /**
+     * this method assigns the crew to the vehicle. The crew title should match the vehicle type for it to be assinged properly
+     * @param {Vehicle} vehicle 
+     */
+    assign(vehicle) {
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "plane" && this.title == "pilot")
+            vehicle.crew.push(this.name)
         }
 
-        if(Vehicle.crew.length == 0) {
-            if (Vehicle.type == "bus" && this.title == "driver")
-            Vehicle.crew.push(this.name)
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "bus" && this.title == "driver")
+            vehicle.crew.push(this.name)
         }
 
-        if(Vehicle.crew.length == 0) {
-            if (Vehicle.type == "train" && this.title == "engineer")
-            Vehicle.crew.push(this.name)
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "train" && this.title == "engineer")
+            vehicle.crew.push(this.name)
         }
 
-        if(Vehicle.crew.length == 0) {
-            if (Vehicle.type == "boat" && this.title == "captain")
-            Vehicle.crew.push(this.name)
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "boat" && this.title == "captain")
+            vehicle.crew.push(this.name)
         }
 
 }
@@ -77,7 +98,6 @@ class Employee {
 let v1 = new Vehicle("max","plane");
 
 console.log(v1);
-
 
 
 let e1 = new Employee("James","pilot");
