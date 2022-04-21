@@ -3,7 +3,7 @@
  */
 
 
-class Vehicle {
+ class Vehicle {
 
     name; //string
     type; //string
