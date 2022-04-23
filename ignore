@@ -1,0 +1,38 @@
+
+
+
+///
+
+
+
+let v1 = new Vehicle("max","plane");
+
+console.log(v1);
+
+
+
+let e1 = new Employee("James","pilot");
+let e2 = new Employee("Justin","pilot");
+
+
+let e3 = new Employee("Jany","driver");
+let v3 = new Vehicle("max1","bus");
+
+
+console.log(v3);
+
+e3.assign(v3);
+
+console.log("after");
+
+console.log(v3);
+
+e3.assign(v3);
+
+console.log("after");
+
+console.log(v3);
+
+e3.assign(v1);
+
+console.log(v1);

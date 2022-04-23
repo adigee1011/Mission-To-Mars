@@ -1,3 +1,5 @@
+
+
 /**
  * this is a new class for Vehicle
  */
@@ -28,34 +30,26 @@
      */
     canGo(employee) {
 
-        console.log(employee);
-        console.log(this.crew.length);
-
-        if(this.crew.length == 0){
-            console.log(`${this.type} cannot go because it does not have a crew or the right crew assigned`)
-        }
-
+        if (this.crew.length != 0) {
         if(this.type == "plane" && employee.title == "pilot") {
             console.log(`the ${this.type} can go`)
         }
 
-        else if(this.type == "bus" && employee.title == "driver") {
+        if(this.type == "bus" && employee.title == "driver") {
             console.log(`the ${this.type} can go`)
         }
 
-        else if(this.type == "train" && employee.title == "engineer") {
+        if(this.type == "train" && employee.title == "engineer") {
             console.log(`the ${this.type} can go`)
         }
 
-        else if(this.type == "boat" && employee.title == "captain") {
+        if(this.type == "boat" && employee.title == "captain") {
             console.log(`the ${this.type} can go`)
         }
 
-        else {
+        } else {
             console.log(`${this.type} cannot go because it does not have a crew or the right crew assigned`)
-            
-    }
-
+        } 
 }
 
 }
@@ -75,13 +69,29 @@ class Employee {
     }
 
     /**
-     * this method assigns the crew to the vehicle and the vehicle can have multiple crews
+     * this method assigns the crew to the vehicle. The crew title should match the vehicle type for it to be assinged properly
      * @param {Vehicle} vehicle 
      */
     assign(vehicle) {
-      
-        vehicle.crew.push(this.name)
-        //console.log(vehicle.crew);
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "plane" && this.title == "pilot")
+            vehicle.crew.push(this.name)
+        }
+
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "bus" && this.title == "driver")
+            vehicle.crew.push(this.name)
+        }
+
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "train" && this.title == "engineer")
+            vehicle.crew.push(this.name)
+        }
+
+        if(vehicle.crew.length == 0) {
+            if (vehicle.type == "boat" && this.title == "captain")
+            vehicle.crew.push(this.name)
+        }
 
 }
 
@@ -89,7 +99,7 @@ class Employee {
 
 let v1 = new Vehicle("max","plane");
 
-//console.log(v1);
+console.log(v1);
 
 
 let e1 = new Employee("James","pilot");
@@ -100,26 +110,15 @@ let e3 = new Employee("Jany","driver");
 let v3 = new Vehicle("max1","bus");
 
 console.log(e1);
-console.log(e3);
-console.log(v3.canGo(e1));
-
-e1.assign(v3)
-//console.log(v1.canGo(e3));
-console.log(v3.canGo(e1));
-e3.assign(v3)
-console.log(v3.canGo(e1));
-console.log(v3.canGo(e3));
-
 
 //console.log(v1.canGo(e1));
-//e1.assign(v3)
-//e3.assign(v3)
-//console.log(v3)
-//v3.canGo(e1);
-//v3.canGo(e3);
+
 //console.log(v3.canGo(e1));
-//console.log(v1.canGo(e3));
-//console.log(v3.canGo(e3));
+e1.assign(v3)
+console.log(v3.canGo(e3));
+console.log(v3.canGo(e1));
+e3.assign(v3)
+console.log(v3.canGo(e3));
 //e1.assign(v1);
 //e2.assign(v1);
 
