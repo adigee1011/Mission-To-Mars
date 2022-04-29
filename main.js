@@ -87,7 +87,7 @@ class Employee {
 
 }
 
-let v1 = new Vehicle("max","plane");
+
 
 //console.log(v1);
 
