@@ -108,7 +108,7 @@ e1.assign(v3)
 console.log(v3.canGo(e1));
 e3.assign(v3)
 console.log(v3.canGo(e1));
-
+console.log(v3.canGo(e3));
 
 
 //console.log(v1.canGo(e1));
